@@ -15,17 +15,17 @@
     <body>
     <dir>
         <img src="http://fb1-dk.lnwfile.com/dtx5jt.jpg" width="80" height="80">
-        
-            <input type="button" value="Expliorar" id="expliorar" >
-            <input type="button" value="Catagory" id="catagory" >
-            <dir>
-                <%--<input type="button" <%--value="<%=System.out.print("name userTest")%>"--%>
-            <h3>name userTest<h3>                
-            </dir>   
-        <form action="Jobform" method="get">
-            <input type="button" value="Create" id="create">
-            <input type="submit" value="JOB">
-        </form>
-    </dir>
-    </body>
-</html>
+
+        <input type="button" value="Expliorar" id="expliorar" >
+        <input type="button" value="Catagory" id="catagory" >
+        <dir>            
+            <%--<input type="button" <%--value="<%=System.out.print("name userTest")%>"--%>
+            <h3><%= request.getAttribute("username")%> <h3>                
+                    </dir>   
+                    <form action="Jobform" method="get">
+                        <input type="button" value="Create" id="create">
+                        <input type="submit" value="JOB">
+                    </form>
+                    </dir>
+                    </body>
+                    </html>
