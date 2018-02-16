@@ -8,6 +8,10 @@
         <servlet-name>Profile</servlet-name>
         <servlet-class>Servlet.Profile</servlet-class>
     </servlet>
+    <servlet>
+        <servlet-name>JobForm</servlet-name>
+        <servlet-class>Servlet.JobForm</servlet-class>
+    </servlet>
     <servlet-mapping>
         <servlet-name>index</servlet-name>
         <url-pattern>/index</url-pattern>
@@ -15,6 +19,10 @@
     <servlet-mapping>
         <servlet-name>Profile</servlet-name>
         <url-pattern>/Profile</url-pattern>
+    </servlet-mapping>
+    <servlet-mapping>
+        <servlet-name>JobForm</servlet-name>
+        <url-pattern>/JobForm</url-pattern>
     </servlet-mapping>
     <session-config>
         <session-timeout>
