@@ -18,13 +18,14 @@ import java.util.logging.Logger;
 public class ConnectionBuidler {
     public static Connection getConnection() throws SQLException{
         Connection con = null;
-        String url = "";
-        String user= "";
-        String password ="";
+        String user = "pusher";
+        String password = "pusher";
+        String url = "jdbc:mysql://159.65.13.27:3306/pusher";
+        String dbClass = "com.mysql.jdbc.Driver";
         
         try {
-            Class.forName("com.mysql.jdbc.Driver");
-             con  = (Connection) DriverManager.getConnection("jdbc:mysql://localhost:3306/mysql?zeroDateTimeBehavior=convertToNull","root","root");
+            Class.forName(dbClass);
+            con = (Connection) DriverManager.getConnection(url, user, password);
         } catch (ClassNotFoundException ex) {
             Logger.getLogger(ConnectionBuidler.class.getName()).log(Level.SEVERE, null, ex);
         }
