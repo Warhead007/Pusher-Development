@@ -15,7 +15,7 @@ import java.util.logging.Logger;
  *
  * @author Patiz
  */
-public class JobModel {
+public class JobModelTEST {
     private int jobid;
     private String name;
     private String picpath;
