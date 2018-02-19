@@ -80,7 +80,7 @@ public class JobModelTEST {
     }
         
         public static void main(String[] args) {
-        JobModel jm = new JobModel();
+        JobModelTEST jm = new JobModelTEST();
         
         jm.addJob("patis", "test", 001, "eieiza");
     }
