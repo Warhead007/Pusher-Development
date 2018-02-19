@@ -6,6 +6,7 @@
 package Servlet;
 
 import Model.JobModel;
+import Model.JobModelTEST;
 import java.io.BufferedReader;
 import java.io.IOException;
 import java.io.InputStreamReader;
@@ -79,7 +80,7 @@ public class AddJobServlet extends HttpServlet {
         String picpath = "/"+pictureName;
         int userid = 001;
         
-        JobModel jf = new JobModel();
+        JobModelTEST jf = new JobModelTEST();
         jf.addJob(name, picpath, userid, description);
 //    out.close(); pictureName 
     getServletContext().getRequestDispatcher("/testPage.jsp").forward(request, response);
