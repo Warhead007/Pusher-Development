@@ -12,10 +12,9 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     </head>
     <body>       
-        <form action="Index" method="get">
-            <% int test=(int)request.getAttribute("Test");%>
-        <input value="Profile" type="submit" >        
-        <input type="text" value="<%=test%>">
+        <form action="Profile" method="get">            
+            <input value="Profile" type="submit" >      
+        
         </form>
     </body>
 </html>
