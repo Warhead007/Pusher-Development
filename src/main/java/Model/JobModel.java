@@ -111,10 +111,10 @@ public class JobModel {
     }
     
     public static void main(String[] args) throws SQLException {
-<<<<<<< HEAD
+
         JobModel jm = new JobModel();
         System.out.println(jm.getJob(1));
-=======
+
         ArrayList<JobModel> j = JobModel.getJob(1);
 
         for (JobModel job : j) {
@@ -122,6 +122,10 @@ public class JobModel {
             String srt = test.substring(0, test.indexOf(" "));
             System.out.println(test);
         }
->>>>>>> 50919870c308720b25ff4895a8a3dbd185fe2cae
+
+    }
+
+    void addJob(String patis, String test, int i, String eieiza) {
+        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
     }
 }
