@@ -125,7 +125,5 @@ public class JobModel {
 
     }
 
-    void addJob(String patis, String test, int i, String eieiza) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
-    }
+    
 }
