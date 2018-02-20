@@ -67,8 +67,8 @@ public class ProfileModel {
         ArrayList<ProfileModel> pm = new ArrayList<>();
         ProfileModel profile = new ProfileModel();
         try {
-            Connection con = ConnectionBuidler.getConnection();
-            PreparedStatement pstm = con.prepareStatement("select * from profile where userId = ?");
+            Connection con = ConnectionBuilder.getConnection();
+            PreparedStatement pstm = con.prepareStatement("select * from Profile where userId = ?");
             pstm.setInt(1, userId);
             ResultSet rs = pstm.executeQuery();
             while (rs.next()) {
@@ -91,7 +91,8 @@ public class ProfileModel {
         ArrayList<ProfileModel> p = ProfileModel.getById(1);
 
         for (ProfileModel profile : p) {
-            String test = profile.getUsername()+ " " + profile.getEmail();
+            String test = profile.getUsername()+ " " + profile.getRating() +" "
+                    + profile.getEmail(); 
             String srt = test.substring(0, test.indexOf(" "));
             System.out.println(test);
 
