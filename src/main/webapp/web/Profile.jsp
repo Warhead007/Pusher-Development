@@ -22,7 +22,7 @@
             <%--<input type="button" <%--value="<%=System.out.print("name userTest")%>"--%>
             <h3><%= request.getAttribute("username")%> <h3>                
                     </dir>   
-                    <form action="Jobform" method="get">
+                    <form action="AddJobServlet" method="get">
                         <input type="button" value="Create" id="create">
                         <input type="submit" value="JOB">
                     </form>
