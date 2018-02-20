@@ -1,3 +1,10 @@
+<%-- 
+    Document   : jobform
+    Created on : Feb 19, 2018, 8:56:11 PM
+    Author     : nuswee43
+--%>
+
+<%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
 
