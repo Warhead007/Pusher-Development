@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.RequestDispatcher;
-
+import java.util.ArrayList;
 
 /**
  *
@@ -34,10 +34,16 @@ public class Profile extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         ProfileModel profile=new ProfileModel();
+        ArrayList<ProfileModel> pm = ProfileModel.getById(1);
+   String test=" ";
+        for (ProfileModel profiles : pm) {
+            test = profiles.getUsername();
+        }
         //profile.getById(11111);//EX user Id
-        profile.setUsername("TestUsername");
+        //profile.setUsername("TestUsername");
         String testusername=profile.getUsername();
-        request.setAttribute("username",testusername);
+        //request.setAttribute("username",testusername);
+        request.setAttribute("username",test);
         RequestDispatcher dispatcher=request.getRequestDispatcher("/Web/Profile.jsp");
         dispatcher.forward(request, response);
     }
