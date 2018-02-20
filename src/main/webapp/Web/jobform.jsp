@@ -36,7 +36,7 @@
 </head>
 
 <body>
-    <dir style="border-bottom: 1px solid;color: grey;">
+    <dir style="border-bottom: 1px solid;color: grey;padding: 2%">
         <a href="">
             <img src="https://www.picz.in.th/images/2018/02/19/28176315_1700763773319130_1653912373_n.png" width="120" height="100">
             <br>
@@ -44,17 +44,17 @@
         <input type="button" value="Explorer" id="explorer" style="position:relative;left:13%;">
         <input type="button" value="Catagory" id="catagory" style="position:relative;left:15%;">
         <a href="">
-            <img src="https://www.picz.in.th/images/2018/02/20/bubble-chat-icon-74266.png" width="50" height="50" style="position:absolute;right: 25%;top:13%;">
+            <img src="https://www.picz.in.th/images/2018/02/20/bubble-chat-icon-74266.png" width="50" height="50" style="position:absolute;right: 25%;top:20%;">
         </a>
         <a href="">
-            <img src="https://www.picz.in.th/images/2018/02/20/notification-outline.png" width="30" height="30" style="position:absolute;right: 21%;top:15%;">
+            <img src="https://www.picz.in.th/images/2018/02/20/notification-outline.png" width="30" height="30" style="position:absolute;right: 21%;top:22%;">
         </a>
         <a href="">
-            <img src="https://www.picz.in.th/images/2018/02/20/Ei-search.svg.png" width="50" height="50" style="position:absolute;right: 16%;top:13.5%;">
+            <img src="https://www.picz.in.th/images/2018/02/20/Ei-search.svg.png" width="50" height="50" style="position:absolute;right: 16%;top:20.5%;">
         </a>
         <a href="">
             <img src="https://www.picz.in.th/images/2018/02/20/18835637_1369059323142553_2330143378752656765_n.png" width="100" height="100"
-                style="position:absolute;right: 3%;top: 3%;">
+                style="position:absolute;right: 3%;top: 9%;">
         </a>
     </dir>
     <form enctype="multipart/form-data" action="/Pusher/AddJobServlet" method="POST">
@@ -93,8 +93,8 @@
 
 </body>
 <footer>
-    <div style="border-top: 2px solid;color: grey; margin: 60px;">
-        Footer
+    <div style="border-top: 2px solid;color: grey; margin-top: 60px;">
+
     </div>
 </footer>
 
