@@ -32,7 +32,7 @@ public class JobModel {
     public static ArrayList<JobModel> getJob(int id) throws SQLException {
         ArrayList jobDesc = new ArrayList<>();
         JobModel j = null;
-        Connection con = ConnectionBuidler.getConnection();
+        Connection con = ConnectionBuilder.getConnection();
         try {
 
             PreparedStatement pstm = con.prepareStatement("SELECT *"
