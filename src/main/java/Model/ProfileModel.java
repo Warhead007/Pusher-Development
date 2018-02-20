@@ -18,6 +18,7 @@ import java.util.logging.Logger;
  * @author Rawit Supatanakorn
  */
 public class ProfileModel {
+
     private int userId;
     private String username;
     private String picpath;
@@ -63,6 +64,7 @@ public class ProfileModel {
     public void setEmail(String email) {
         this.email = email;
     }
+
     public static ArrayList<ProfileModel> getById(int userId) {
         ArrayList<ProfileModel> pm = new ArrayList<>();
         ProfileModel profile = new ProfileModel();
@@ -86,13 +88,12 @@ public class ProfileModel {
         }
         return pm;
     }
-    
+
     public static void main(String[] args) {
         ArrayList<ProfileModel> p = ProfileModel.getById(1);
 
         for (ProfileModel profile : p) {
-            String test = profile.getUsername()+ " " + profile.getRating() +" "
-                    + profile.getEmail(); 
+            String test = profile.getUsername() + " " + profile.getRating() + " "+ profile.getEmail();
             String srt = test.substring(0, test.indexOf(" "));
             System.out.println(test);
 
