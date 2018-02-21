@@ -59,13 +59,22 @@
                  style="position:absolute;right: 3%;top: 7%;">
         </a>
     </dir>
-    <form action="/PusherModel/AddJobServlet" method="POST">
+
+    <div style="border-style: solid;width: 80%;margin-left: 11em;padding: 10px">
+
+            <form action="/PusherModel/AddJobServlet" method="POST">
+        <h1>JOB NAME</h1>
         <input type="text" name="name" placeholder="Jobname" required="">
+        <h1>DESCRIPTION</h1>
         <textarea placeholder="Description" style="resize: none;"  name="description" rows="5" cols="50"required="">
         </textarea>
+        <br>
+        <br>
         <input type="submit" value="OK" >
     </form>
-
+        <br>
+        <br>
+    </div>
 
 </body>
 <footer>
