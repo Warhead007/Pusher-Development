@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -61,7 +62,7 @@ public class JobFormModel {
     public void setUserId(int userId) {
         this.userId = userId;
     }
-    public void addJob(String name, String picpath,int userId,String description) {
+    public void addJob(String name, String picpath,int userId,String description) throws IOException {
         JobFormModel jfm = new JobFormModel();
         try {
             Connection con = ConnectionBuilder.getConnection();
@@ -77,7 +78,7 @@ public class JobFormModel {
             Logger.getLogger(JobFormModel.class.getName()).log(Level.SEVERE, null, ex);
         }
     }
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         JobFormModel job = new JobFormModel();
         job.addJob("Pen from Paper by Ham","ffolk;lm[aokmol2f",1,"Pen made by recycle good for world.");
     }
