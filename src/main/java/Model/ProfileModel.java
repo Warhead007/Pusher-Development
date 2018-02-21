@@ -94,7 +94,7 @@ public class ProfileModel {
         ArrayList<ProfileModel> p = ProfileModel.getById(1);
 
         for (ProfileModel profile : p) {
-            String test = profile.getUsername() + " " + profile.getRating() + " "+ profile.getEmail();
+            String test = profile.getUsername() + " " + profile.getRating() + " "+ profile.getEmail()+profile.getUserId();
             String srt = test.substring(0, test.indexOf(" "));
             System.out.println(test);
 

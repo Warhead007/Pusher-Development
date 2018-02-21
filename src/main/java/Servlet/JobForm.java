@@ -32,10 +32,10 @@ public class JobForm extends HttpServlet {
             throws ServletException, IOException {
         response.setContentType("text/html;charset=UTF-8");
         String name = request.getParameter("name");
-        String picpath = request.getParameter("picpath");
+        String picpath = "dummyPath";
         String description = request.getParameter("description");
-        String useridGet = request.getParameter("userid");
-        int userid = Integer.parseInt(useridGet);
+//        String useridGet = request.getParameter("userid");
+        int userid = 01;
         
         if(name != null && picpath != null && description != null ){
                JobFormModel jf = new JobFormModel();
@@ -46,7 +46,7 @@ public class JobForm extends HttpServlet {
         }else{
                   request.setAttribute("msg","Fail to add job topic!");
               }
-            getServletContext().getRequestDispatcher("/JobForm.jsp").forward(request, response);
+            getServletContext().getRequestDispatcher("/Profile").forward(request, response);
     }
 
     // <editor-fold defaultstate="collapsed" desc="HttpServlet methods. Click on the + sign on the left to edit the code.">

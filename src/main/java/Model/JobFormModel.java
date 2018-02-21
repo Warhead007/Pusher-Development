@@ -66,7 +66,7 @@ public class JobFormModel {
         JobFormModel jfm = new JobFormModel();
         try {
             Connection con = ConnectionBuilder.getConnection();
-            PreparedStatement pstm = con.prepareStatement("insert into job (name,picpath,userId,description) values(?,?,?,?)");
+            PreparedStatement pstm = con.prepareStatement("insert into Job (name,picpath,userId,description) values(?,?,?,?)");
             pstm.setString(1, name);
             pstm.setString(2, picpath);
             pstm.setInt(3, userId);

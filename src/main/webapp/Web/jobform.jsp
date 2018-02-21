@@ -54,7 +54,7 @@
         <a href="">
             <img src="https://www.picz.in.th/images/2018/02/20/Ei-search.svg.png" width="50" height="50" style="position:absolute;right: 16%;top:16%;">
         </a>
-        <a href="">
+        <a href="/Profile">
             <img src="https://www.picz.in.th/images/2018/02/20/18835637_1369059323142553_2330143378752656765_n.png" width="100" height="100"
                  style="position:absolute;right: 3%;top: 7%;">
         </a>
@@ -62,12 +62,11 @@
 
     <div style="border-style: solid;width: 80%;margin-left: 11em;padding: 10px">
 
-            <form action="/PusherModel/AddJobServlet" method="POST">
+            <form action="/Pusher/JobForm" method="POST">
         <h1>JOB NAME</h1>
         <input type="text" name="name" placeholder="Jobname" required="">
         <h1>DESCRIPTION</h1>
-        <textarea placeholder="Description" style="resize: none;"  name="description" rows="5" cols="50"required="">
-        </textarea>
+        <textarea placeholder="Description" style="resize: none;"  name="description" rows="10" cols="100"required="" ></textarea>
         <br>
         <br>
         <input type="submit" value="OK" >

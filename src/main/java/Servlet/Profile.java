@@ -36,14 +36,17 @@ public class Profile extends HttpServlet {
         ProfileModel profile=new ProfileModel();
         ArrayList<ProfileModel> pm = ProfileModel.getById(1);
    String test=" ";
+   int userID = 0;
         for (ProfileModel profiles : pm) {
             test = profiles.getUsername();
+            userID = profiles.getUserId();
         }
         //profile.getById(11111);//EX user Id
         //profile.setUsername("TestUsername");
         String testusername=profile.getUsername();
         //request.setAttribute("username",testusername);
         request.setAttribute("username",test);
+        request.setAttribute("id",userID);
         RequestDispatcher dispatcher=request.getRequestDispatcher("/Web/Profile.jsp");
         dispatcher.forward(request, response);
     }

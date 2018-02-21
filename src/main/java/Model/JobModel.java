@@ -19,6 +19,7 @@ import java.util.logging.Logger;
  * @author nuswee43
  */
 public class JobModel {
+
     private int jobid;
     private String name;
     private String picpath;
@@ -29,7 +30,7 @@ public class JobModel {
     public String toString() {
         return "JobModel{" + "jobid=" + jobid + ", name=" + name + ", picpath=" + picpath + ", description=" + description + ", userId=" + userId + '}';
     }
-    
+
     public static ArrayList<JobModel> getJob(int id) throws SQLException, IOException {
         ArrayList<JobModel> jobDesc = new ArrayList<>();
         JobModel j = null;
@@ -39,7 +40,7 @@ public class JobModel {
             PreparedStatement pstm = con.prepareStatement("SELECT *"
                     + "FROM Job "
                     + "WHERE jobid = ?");
-            pstm.setInt(1,id);
+            pstm.setInt(1, id);
             ResultSet rs = pstm.executeQuery();
             while (rs.next()) {
                 j = new JobModel();
@@ -61,6 +62,7 @@ public class JobModel {
         b.setDescription(rs.getString("description"));
         b.setUserId(rs.getInt("userid"));
     }
+
     public JobModel() {
     }
 
@@ -71,7 +73,7 @@ public class JobModel {
         this.description = description;
         this.userId = userId;
     }
-    
+
     public int getJobid() {
         return jobid;
     }
@@ -111,21 +113,36 @@ public class JobModel {
     public void setUserId(int userId) {
         this.userId = userId;
     }
-    
+
+    public static ArrayList<JobModel> getJobFromUserID(int userId) throws SQLException, IOException {
+
+        ArrayList<JobModel> jobs = new ArrayList<>();
+        Connection con = ConnectionBuilder.getConnection();
+        PreparedStatement pstm = con.prepareStatement("select * from Job where userId = ?");
+        pstm.setInt(1, userId);
+        ResultSet rs = pstm.executeQuery();
+        while (rs.next()) {
+            JobModel jm = new JobModel();
+           jm.setName(rs.getString("name"));
+           jm.setDescription(rs.getString("description"));
+           jm.setUserId(rs.getInt("userId"));
+           
+           jobs.add(jm);
+        }
+        con.close();
+
+        return jobs;
+    }
+
     public static void main(String[] args) throws SQLException, IOException {
 
         //JobModel jm = new JobModel();
-        //System.out.println(jm.getJob(8));
-
-        ArrayList<JobModel> j = JobModel.getJob(8);
-
-        for (JobModel job : j) {
-            String test = job.getName()+ " " + job.getDescription();
-            String srt = test.substring(0, test.indexOf(" "));
-            System.out.println(test);
-        }
+        //System.out.println(jm.getJobj(8));
+            ArrayList<JobModel> jobs = JobModel.getJobFromUserID(1);
+            for(JobModel job:jobs){
+                System.out.println(job.getDescription());
+            }
 
     }
 
-    
 }

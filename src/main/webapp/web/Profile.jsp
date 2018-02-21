@@ -4,6 +4,8 @@
     Author     : nuswee43
 --%>
 
+<%@page import="java.util.ArrayList"%>
+<%@page import="Model.JobModel"%>
 <%@page import="Model.ProfileModel"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
@@ -42,8 +44,9 @@
             <img src="https://www.picz.in.th/images/2018/02/19/28176315_1700763773319130_1653912373_n.png" width="120" height="100">
             <br>
         </a>
-        <span><a href="">Explorer</a></span>
-        <span><a href="">Catagory</a></span>
+        <input type="button" value="Explorer" id="explorer" style="position:relative;left:13%;">
+        <input type="button" value="Catagory" id="catagory" style="position:relative;left:15%;">
+
 
         <a href="">
             <img src="https://www.picz.in.th/images/2018/02/20/bubble-chat-icon-74266.png" width="50" height="50" style="position:absolute;right: 25%;top:16%;">
@@ -54,7 +57,7 @@
         <a href="">
             <img src="https://www.picz.in.th/images/2018/02/20/Ei-search.svg.png" width="50" height="50" style="position:absolute;right: 16%;top:16%;">
         </a>
-        <a href="">
+        <a href="/Profile">
             <img src="https://www.picz.in.th/images/2018/02/20/18835637_1369059323142553_2330143378752656765_n.png" width="100" height="100"
                  style="position:absolute;right: 3%;top: 7%;">
         </a>
@@ -65,7 +68,7 @@
         <br>
         <div style="text-align: right; margin-right: 10px">
             <button>CREATE PROJECT</button>
-            <a href="/PusherDevelopment/JobformServlet"><button>CREATE JOB</button></a>
+            <a href="/Pusher/JobformServlet"><button>CREATE JOB</button></a>
         </div>
         <br><br>
         <div style="border-style: solid;width: 80%;margin-left: 7em;height: 10em">
@@ -74,8 +77,30 @@
         <br>
         <br>
 
-        <div style="border-style: solid;width: 80%;margin-left: 7em;height: 10em">
+        <div style="border-style: solid;width: 80%;margin-left: 7em;">
 <h1>My Post</h1>
+
+<div>
+    <div class="container-fluid">
+  <div class="row">
+      <%
+          int id = (int)request.getAttribute("id");
+          ArrayList<JobModel> jobs = JobModel.getJobFromUserID(1);
+          for(JobModel job:jobs){
+              
+      %>
+      <div class="col-md-4">
+          <div style="border: solid 1px"> 
+              <h5>JOB NAME :<%=job.getName()%></h5>
+              <%=job.getDescription()%>
+              <%=id%>
+          </div>
+      </div>
+      <%
+      }
+      %>
+  </div>
+</div>
         </div>
 
         <br>
