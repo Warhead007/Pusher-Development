@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -65,7 +66,7 @@ public class ProfileModel {
         this.email = email;
     }
 
-    public static ArrayList<ProfileModel> getById(int userId) {
+    public static ArrayList<ProfileModel> getById(int userId) throws IOException {
         ArrayList<ProfileModel> pm = new ArrayList<>();
         ProfileModel profile = new ProfileModel();
         try {
@@ -89,7 +90,7 @@ public class ProfileModel {
         return pm;
     }
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
         ArrayList<ProfileModel> p = ProfileModel.getById(1);
 
         for (ProfileModel profile : p) {
