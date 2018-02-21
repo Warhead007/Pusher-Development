@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
@@ -29,20 +30,21 @@ public class JobModel {
         return "JobModel{" + "jobid=" + jobid + ", name=" + name + ", picpath=" + picpath + ", description=" + description + ", userId=" + userId + '}';
     }
     
-    public static ArrayList<JobModel> getJob(int id) throws SQLException {
-        ArrayList jobDesc = new ArrayList<>();
+    public static ArrayList<JobModel> getJob(int id) throws SQLException, IOException {
+        ArrayList<JobModel> jobDesc = new ArrayList<>();
         JobModel j = null;
         Connection con = ConnectionBuilder.getConnection();
         try {
 
             PreparedStatement pstm = con.prepareStatement("SELECT *"
                     + "FROM Job "
-                    + "WHERE jobid = 1");
+                    + "WHERE jobid = ?");
             pstm.setInt(1,id);
             ResultSet rs = pstm.executeQuery();
             while (rs.next()) {
                 j = new JobModel();
                 orm(rs, j);
+                jobDesc.add(j);
             }
             con.close();
 
@@ -110,12 +112,12 @@ public class JobModel {
         this.userId = userId;
     }
     
-    public static void main(String[] args) throws SQLException {
+    public static void main(String[] args) throws SQLException, IOException {
 
-        JobModel jm = new JobModel();
-        System.out.println(jm.getJob(1));
+        //JobModel jm = new JobModel();
+        //System.out.println(jm.getJob(8));
 
-        ArrayList<JobModel> j = JobModel.getJob(1);
+        ArrayList<JobModel> j = JobModel.getJob(8);
 
         for (JobModel job : j) {
             String test = job.getName()+ " " + job.getDescription();
