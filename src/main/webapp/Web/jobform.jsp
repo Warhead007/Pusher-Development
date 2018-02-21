@@ -60,8 +60,8 @@
         </a>
     </dir>
     <form action="/PusherModel/AddJobServlet" method="POST">
-        <input type="text" name="name" placeholder="Jobname">
-        <textarea placeholder="Description" style="resize: none;"  name="description" rows="5" cols="50">
+        <input type="text" name="name" placeholder="Jobname" required="">
+        <textarea placeholder="Description" style="resize: none;"  name="description" rows="5" cols="50"required="">
         </textarea>
         <input type="submit" value="OK" >
     </form>
