@@ -5,6 +5,7 @@
  */
 package Model;
 
+import java.io.IOException;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.SQLException;
@@ -62,7 +63,7 @@ public class JobModelTEST {
         this.userId = userId;
     }
     
-        public void addJob(String name, String picpath,int userId,String description) {
+        public void addJob(String name, String picpath,int userId,String description) throws IOException {
         JobModel jfm = new JobModel();
         try {
             Connection con = ConnectionBuilder.getConnection();
@@ -79,7 +80,7 @@ public class JobModelTEST {
         }
     }
         
-        public static void main(String[] args) {
+        public static void main(String[] args) throws IOException {
         JobModelTEST jm = new JobModelTEST();
         
         jm.addJob("patis", "test", 001, "eieiza");
