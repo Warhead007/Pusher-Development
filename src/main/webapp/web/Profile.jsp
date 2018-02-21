@@ -65,7 +65,7 @@
         <br>
         <div style="text-align: right; margin-right: 10px">
             <button>CREATE PROJECT</button>
-            <button>CREATE JOB</button>
+            <a href="/PusherDevelopment/JobformServlet"><button>CREATE JOB</button></a>
         </div>
         <br><br>
         <div style="border-style: solid;width: 80%;margin-left: 7em;height: 10em">
